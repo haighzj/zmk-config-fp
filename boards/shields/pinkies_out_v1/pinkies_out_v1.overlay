@@ -74,7 +74,7 @@
         segment-remap;
         com-invdir;
         com-sequential;
-        prechargep = <0x22>;
+        prechargep = <0xF1>;
 
         # Account for lack of physical reset pin on oled
         reset-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>; 
