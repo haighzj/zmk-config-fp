@@ -59,14 +59,17 @@
     };
 };
 
-&pro_micro_i2c {
+&i2c0 {
     status = "okay";
+    /* Force-bind the exact nice!nano v2 physical I2C pins */
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
 
     oled: ssd1306@3d {
         compatible = "solomon,ssd1306fb";
         reg = <0x3d>;
         width = <128>;
-        height = <64>;
+        height = <32>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
@@ -74,9 +77,17 @@
         segment-remap;
         com-invdir;
         com-sequential;
-        prechargep = <0xF1>;
+        prechargep = <0x22>;
+    };
+};
 
-        # Account for lack of physical reset pin on oled
-        reset-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>; 
+/* Explicitly route the nice!nano v2 internal pin registers */
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 15)>, // Pro Micro Pin 2
+                    <NRF_PSEL(TWIM_SCL, 0, 17)>; // Pro Micro Pin 3
+            bias-pull-up; // Injects internal processor pull-ups
+        };
     };
 };
