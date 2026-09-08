@@ -10,8 +10,6 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
-        // for logging, remove later
-        // zephyr,console = &cdc_acm_uart;
     };
 
     kscan0: kscan_0 {
