@@ -21,3 +21,5 @@
 include:
   - board: nice_nano//zmk
     shield: pinkies_out_v1
+  - board: nice_nano//zmk
+    shield: settings_reset
