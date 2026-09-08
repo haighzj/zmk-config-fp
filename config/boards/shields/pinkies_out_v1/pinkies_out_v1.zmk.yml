@@ -6,3 +6,5 @@ url: https://github.com/sadekbaroudi/pinkies-out/
 requires: [pro_micro]
 features:
   - keys
+siblings:
+  - pinkies_out_v1
