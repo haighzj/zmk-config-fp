@@ -65,7 +65,7 @@
     &trans     &trans       &trans       &trans      &trans        &trans      &trans               &trans     &trans        &trans           &trans            &trans      &trans      &trans
     &mkp MCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &kp PG_UP     &kp HOME         &kp UP            &kp END     &trans      &trans
     &mkp LCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &kp PG_DN     &kp LEFT         &kp DOWN          &kp RIGHT   &trans      &trans
-    &mkp RCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &kp EQUAL     &kp LG(LS(LEFT)) &kp LG(LS(RIGHT)) &trans      &trans      &trans
+    &mkp RCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &kp EQUAL     &trans           &trans            &trans      &trans      &trans
                             &trans       &trans      &trans        &trans      &kp TAB              &kp BSPC   &kp SPACE     &trans           &trans            &trans
             >;
         };
