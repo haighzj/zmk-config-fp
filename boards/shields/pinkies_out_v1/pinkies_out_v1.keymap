@@ -15,7 +15,6 @@
 #define SYM     2
 #define FUNC    3
 #define MEDIA   4
-#define WINNAV  5
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
