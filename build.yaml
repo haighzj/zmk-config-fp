@@ -16,10 +16,10 @@
 #     snippet: studio-rpc-usb-uart
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
+#   - board: nice_nano//zmk
+#     shield: settings_reset
 #
 ---
 include:
   - board: nice_nano//zmk
     shield: pinkies_out_v1
-  - board: nice_nano//zmk
-    shield: settings_reset
