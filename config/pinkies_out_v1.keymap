@@ -6,6 +6,10 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#include <dt-bindings/zmk/pointing.h>
+
 #define DEFAULT 0
 #define NAV     1
 #define SYM     2
@@ -62,11 +66,11 @@
 
         nav_layer {
             bindings = <
-    &trans     &trans       &trans       &trans      &trans        &trans      &trans               &trans     &trans        &trans           &trans            &trans      &trans      &trans
-    &mkp MCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &kp PG_UP     &kp HOME         &kp UP            &kp END     &trans      &trans
-    &mkp LCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &kp PG_DN     &kp LEFT         &kp DOWN          &kp RIGHT   &trans      &trans
-    &mkp RCLK  &trans       &trans       &trans      &trans        &trans      &trans               &trans     &trans        &kp LG(LS(LEFT)) &kp LG(LS(RIGHT)) &trans      &trans      &trans
-                            &trans       &trans      &trans        &trans      &kp TAB              &kp BSPC   &kp SPACE     &trans           &trans            &trans
+    &trans     &trans       &trans         &trans         &trans          &trans         &trans               &trans     &trans        &trans           &trans            &trans      &trans      &trans
+    &mkp MCLK  &trans       &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &msc SCRL_UP   &trans               &trans     &kp PG_UP     &kp HOME         &kp UP            &kp END     &trans      &trans
+    &mkp LCLK  &trans       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &trans               &trans     &kp PG_DN     &kp LEFT         &kp DOWN          &kp RIGHT   &trans      &trans
+    &mkp RCLK  &trans       &trans         &msc SCRL_LEFT &msc SCRL_RIGHT &trans         &trans               &trans     &trans        &kp LG(LS(LEFT)) &kp LG(LS(RIGHT)) &trans      &trans      &trans
+                            &trans         &trans         &trans          &trans         &kp TAB              &kp BSPC   &kp SPACE     &trans           &trans            &trans
             >;
         };
 
@@ -92,11 +96,11 @@
 
         media_layer {
             bindings = <
-    &trans     &trans      &trans         &trans       &trans        &trans        &trans             &trans     &trans             &trans            &trans             &trans         &trans          &trans
-    &trans     &trans      &trans         &trans       &trans        &trans        &trans             &trans     &trans             &bt BT_PRV        &bt BT_NXT         &trans         &trans          &trans
-    &trans     &trans      &trans         &trans       &trans        &trans        &trans             &trans     &bt BT_CLR         &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2   &bt BT_SEL 3    &trans
-    &trans     &trans      &trans         &trans       &trans        &trans        &trans             &trans     &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &out OUT_USB   &out OUT_BLE    &trans
-                           &trans         &trans       &trans        &trans        &trans             &trans     &trans             &trans            &trans             &trans
+    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3  &trans        &trans             &trans     &trans             &trans            &trans             &trans         &trans          &trans
+    &trans     &trans       &trans         &trans       &trans        &trans        &trans             &trans     &trans             &bt BT_PRV        &bt BT_NXT         &trans         &trans          &trans
+    &trans     &trans       &trans         &trans       &trans        &trans        &trans             &trans     &bt BT_CLR         &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2   &bt BT_SEL 3    &trans
+    &trans     &trans       &trans         &trans       &trans        &trans        &trans             &trans     &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &out OUT_USB   &out OUT_BLE    &trans
+                            &trans         &trans       &trans        &trans        &trans             &trans     &trans             &trans            &trans             &trans
             >;
         };
 
