@@ -48,6 +48,10 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+        lt: layer_tap {
+            // Adjust the value below (in milliseconds) to make it faster or slower
+            tapping-term-ms = <150>; 
+        };
     };
 
 
